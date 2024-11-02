@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "ion:logo-facebook",
+    "label": "Facebook",
+    "path": "https://www.facebook.com/patriki2802/"
+  },
+  {
+    "icon": "ion:logo-github",
+    "label": "Github",
+    "path": "https://github.com/patriki28"
+  },
+  {
+    "icon": "ion:logo-linkedin",
+    "label": "LinkedIn",
+    "path": "https://www.linkedin.com/in/patrick-diesta-687743238/"
+  }
+]

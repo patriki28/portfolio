@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+JP:wght@100..900&family=Quicksand:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: #e7e5e4; /* Tailwind stone-200 */
+    --primary: #f5f5f4; /* Tailwind stone-100 */
+    --secondary: #d6d3d1; /* Tailwind stone-300 */
+    --accent: #57534e; /* Tailwind stone-600 */
+  }
+
+  .dark {
+    --background: #1c1917; /* Tailwind stone-900 */
+    --primary: #292524; /* Tailwind stone-800 */
+    --secondary: #57534e; /* Tailwind stone-600 */
+    --accent: #a8a29e; /* Tailwind stone-400 */
+  }
+
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
+  .border-secondary {
+    border-color: var(--secondary);
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+  .glow-card {
+    @apply transition-transform duration-300 bg-primary rounded-lg;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3), 0 8px 20px rgba(255, 255, 255, 0.2);
+  }
+  .glow-card:hover {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 8px 40px rgba(255, 255, 255, 0.3);
+  }
+}
+
+body {
+  @apply p-4 relative flex justify-center text-accent bg-background min-h-screen;
+}
+
+h1 {
+  @apply text-xl font-semibold;
+}
+
+h2 {
+  @apply font-semibold;
+}
+
+button {
+  @apply bg-primary border border-secondary hover:bg-secondary rounded-md flex justify-center items-center gap-2;
+}
+
+footer {
+  @apply border-t border-secondary pt-4 mt-4;
+}
+
+.heading-container {
+  @apply flex items-center gap-2;
+}
+
+.theme-controller {
+  @apply w-12 h-12 fixed bottom-5 right-5 bg-primary border border-secondary rounded-full;
+}
+
+.badge {
+  @apply bg-primary border border-secondary rounded-md flex justify-center items-center gap-2;
+}
+
+.bento-grid {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.bento-item {
+  @apply w-full p-4 bg-primary border border-secondary rounded-lg;
+}
+
+/* General scrollbar styles */
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background-color: var(--background);
+  border-radius: 20px;
+}
+
+/* Scrollbar thumb */
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 20px;
+}
+
+/* Scrollbar track */
+.scrollbar::-webkit-scrollbar-track {
+  background-color: var(--primary);
+  border-radius: 20px;
+}
+
+/* Hover effect on the scrollbar thumb */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+}
