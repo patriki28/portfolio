@@ -19,33 +19,6 @@
     --secondary: #57534e; /* Tailwind stone-600 */
     --accent: #a8a29e; /* Tailwind stone-400 */
   }
-
-  .bg-background {
-    background-color: var(--background);
-  }
-
-  .bg-primary {
-    background-color: var(--primary);
-  }
-
-  .bg-secondary {
-    background-color: var(--secondary);
-  }
-
-  .border-secondary {
-    border-color: var(--secondary);
-  }
-
-  .text-accent {
-    color: var(--accent);
-  }
-  .glow-card {
-    @apply transition-transform duration-300 bg-primary rounded-lg;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3), 0 8px 20px rgba(255, 255, 255, 0.2);
-  }
-  .glow-card:hover {
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5), 0 8px 40px rgba(255, 255, 255, 0.3);
-  }
 }
 
 body {
