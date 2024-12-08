@@ -1,4 +1,5 @@
 import '@/assets/css/tailwind.css';
+import 'yet-another-react-lightbox/styles.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from './context/ThemeProvider.jsx';

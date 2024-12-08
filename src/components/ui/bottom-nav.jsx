@@ -6,27 +6,28 @@ import { Link } from 'react-scroll';
 
 export function BottomNav() {
   return (
-    <nav className="sticky bottom-10">
-      <Dock direction="middle">
-        {nav.map((item) => (
-          <DockIcon key={item.id}>
-            <Link
-              to={item.id}
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-50}
-              className="cursor-pointer"
-            >
-              <item.icon />
-            </Link>
-          </DockIcon>
-        ))}
-        <Separator orientation="vertical" />
-        <DockIcon>
-          <ThemeController />
+    <Dock
+      direction="middle"
+      className="fixed bottom-10 left-1/2 -translate-x-1/2"
+    >
+      {nav.map((item) => (
+        <DockIcon key={item.id}>
+          <Link
+            to={item.id}
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            <item.icon />
+          </Link>
         </DockIcon>
-      </Dock>
-    </nav>
+      ))}
+      <Separator orientation="vertical" />
+      <DockIcon>
+        <ThemeController />
+      </DockIcon>
+    </Dock>
   );
 }

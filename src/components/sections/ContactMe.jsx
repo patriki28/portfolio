@@ -5,8 +5,10 @@ import { Separator } from '../ui/separator';
 export default function ContactMe() {
   return (
     <section id="contactme" className="text-center">
-      <h1 className="text-5xl font-semibold">Contact Me</h1>
-      <p className="my-6 text-muted-foreground">
+      <h1 className="text-[clamp(1rem,8vw,3rem)] font-semibold leading-tight">
+        Contact Me
+      </h1>
+      <p className="my-2 text-muted-foreground sm:my-4">
         If you have any questions, please feel free to reach out to me through
         my socials below.
       </p>

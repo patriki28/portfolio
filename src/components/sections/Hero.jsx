@@ -22,20 +22,19 @@ export default function Hero() {
       <Meteors number={30} />
 
       <article className="relative flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl font-semibold">Web Developer</h1>
-        <h1 className="text-8xl font-bold leading-tight">Patrick Diesta</h1>
-        <p className="my-6 max-w-xl text-muted-foreground">
+        <h1 className="text-[clamp(1rem,8vw,3rem)] font-semibold leading-tight">
+          Web Developer
+        </h1>
+        <h1 className="text-[clamp(2.1875rem,12vw,6rem)] font-bold leading-tight">
+          Patrick Diesta
+        </h1>
+        <p className="my-4 max-w-xl text-muted-foreground">
           A motivated senior IT student with a passion for software development.
           Skilled in programming, problem-solving, and eager to contribute to
           innovative technology solutions.
         </p>
 
-        <Button
-          size="lg"
-          variant="outline"
-          className="w-full max-w-xs"
-          onClick={handleDownload}
-        >
+        <Button size="lg" variant="outline" onClick={handleDownload}>
           Download CV
           <Download className="ml-3" />
         </Button>

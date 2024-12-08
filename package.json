@@ -44,7 +44,8 @@
     "react-intersection-observer": "^9.13.1",
     "react-scroll": "^1.9.0",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yet-another-react-lightbox": "^1.14.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

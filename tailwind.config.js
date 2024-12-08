@@ -56,9 +56,14 @@ export default {
         },
       },
       animation: {
+        shine: 'shine 3s linear infinite',
         meteor: 'meteor 5s linear infinite',
       },
       keyframes: {
+        shine: {
+          '0%': { backgroundPosition: '200% 0%' },
+          '100%': { backgroundPosition: '-200% 0%' },
+        },
         meteor: {
           '0%': {
             transform: 'rotate(215deg) translateX(0)',
