@@ -39,6 +39,10 @@ export default async function EventPage({
 
     if (!project) return notFound();
 
+    const imageUrl = project.image?.asset
+        ? urlForImage(project.image).url()
+        : "/placeholder.webp";
+
     return (
         <AnimateSection>
             <section className="text-foreground min-h-screen py-16">
@@ -56,30 +60,16 @@ export default async function EventPage({
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
+                    <div className="relative mb-8 h-64 w-full overflow-hidden rounded-lg md:h-96">
+                        <Image
+                            src={imageUrl}
+                            alt={project.title || 'Project image'}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
 
-                    {project.image?.asset ? (
-                        <div className="relative mb-8 h-64 w-full overflow-hidden rounded-lg md:h-96">
-                            <Image
-                                src={
-                                    urlForImage(project.image).url() ||
-                                    '/placeholder.webp'
-                                }
-                                alt={project.title || 'Project image'}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        </div>
-                    ) : (
-                        <div className="bg-muted relative mb-8 flex h-64 w-full items-center justify-center overflow-hidden rounded-lg md:h-96">
-                            <Image
-                                src="/placeholder.webp"
-                                alt="Placeholder"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    )}
                     <h1 className="mb-4 text-4xl font-semibold md:text-5xl">
                         {project.title}
                     </h1>

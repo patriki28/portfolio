@@ -11,30 +11,22 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ data }: ProjectCardProps) {
     const { image, title, description, slug } = data;
+
+    const imageUrl = image?.asset
+        ? urlForImage(image).url()
+        : "/placeholder.webp";
+
     return (
         <Card className="h-full">
             <CardContent>
-                {image?.asset ? (
-                    <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
-                        <Image
-                            src={
-                                urlForImage(image).url() || '/placeholder.webp'
-                            }
-                            alt={title || 'Project image'}
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                ) : (
-                    <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
-                        <Image
-                            src="/placeholder.webp"
-                            alt="Placeholder"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                )}
+                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
+                    <Image
+                        src={imageUrl}
+                        alt={title || 'Project image'}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
 
                 <div className="space-y-2">
                     <h2 className="truncate text-xl font-semibold">{title}</h2>
