@@ -15,7 +15,6 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { extractTechStackItems } from '@/utils/extractTechStackItems';
 
 const PROJECT_QUERY =
     defineQuery(`*[_type == "project" && slug.current == $slug][0]{
@@ -39,8 +38,6 @@ export default async function EventPage({
     });
 
     if (!project) return notFound();
-
-    const techStack = extractTechStackItems(project.techStack ?? []);
 
     return (
         <AnimateSection>
@@ -97,24 +94,24 @@ export default async function EventPage({
                                     Tech Stack
                                 </h2>
                                 <div className="flex flex-wrap gap-2">
-                                    {techStack.map((item, index) => (
+                                    {project.techStack.map((item: string, index: number) => (
                                         <Badge key={index}>{item}</Badge>
                                     ))}
                                 </div>
                             </div>
                         )}
                     <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                        {project.link && (
+                        {project.link ? (
                             <Button asChild size="lg" variant="default">
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    View Project Link
+                                    View Live Preview
                                 </a>
                             </Button>
-                        )}
+                        ) : <p className='text-muted-foreground'>Live Preview is coming soon</p>}
                     </div>
                 </div>
             </section>

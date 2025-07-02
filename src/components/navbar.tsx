@@ -15,11 +15,11 @@ const navItems = [
 
 export default function Navbar() {
     return (
-        <div className="fixed bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-4">
+        <div className="fixed bottom-10 left-1/2 z-50 flex -translate-x-1/2 gap-4">
             <Dock direction="middle">
                 {navItems.map(({ href, icon: Icon }, index) => (
                     <DockIcon key={index}>
-                        <Link href={href}>
+                        <Link href={href} className='p-4'>
                             <Icon className="size-6" />
                         </Link>
                     </DockIcon>
