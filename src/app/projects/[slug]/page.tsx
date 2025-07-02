@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -27,7 +28,7 @@ const PROJECT_QUERY =
   createdAt
 }`);
 
-export default async function EventPage({
+export default async function ViewProjectPage({
     params,
 }: {
     params: Promise<{ slug: string }>;

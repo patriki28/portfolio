@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { AnimateSection } from '@/components/animate-section';
 import ContactSection from '@/components/contact-section';
 import ExperienceSection from '@/components/experience-section';
