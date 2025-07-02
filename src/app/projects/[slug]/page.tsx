@@ -32,9 +32,11 @@ export default async function EventPage({
 }: {
     params: Promise<{ slug: string }>;
 }) {
+    const { slug } = await params;
+
     const { data: project } = await sanityFetch({
         query: PROJECT_QUERY,
-        params: await params,
+        params: { slug: slug },
     });
 
     if (!project) return notFound();
@@ -76,7 +78,7 @@ export default async function EventPage({
                     <p className="text-muted-foreground mb-6 text-lg whitespace-pre-line">
                         {project.description}
                     </p>
-                    {project.techStack &&
+                    {project?.techStack &&
                         Array.isArray(project.techStack) &&
                         project.techStack.length > 0 && (
                             <div className="mb-6">
@@ -91,7 +93,7 @@ export default async function EventPage({
                             </div>
                         )}
                     <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                        {project.link ? (
+                        {project?.link ? (
                             <Button asChild size="lg" variant="default">
                                 <a
                                     href={project.link}
