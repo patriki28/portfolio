@@ -19,7 +19,7 @@ export default function Navbar() {
             <Dock direction="middle">
                 {navItems.map(({ href, icon: Icon }, index) => (
                     <DockIcon key={index}>
-                        <Link href={href} className='p-4'>
+                        <Link href={href} className="p-4">
                             <Icon className="size-6" />
                         </Link>
                     </DockIcon>

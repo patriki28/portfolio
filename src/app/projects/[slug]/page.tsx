@@ -44,7 +44,7 @@ export default async function ViewProjectPage({
 
     const imageUrl = project.image?.asset
         ? urlForImage(project.image).url()
-        : "/placeholder.webp";
+        : '/placeholder.webp';
 
     return (
         <AnimateSection>
@@ -87,9 +87,11 @@ export default async function ViewProjectPage({
                                     Tech Stack
                                 </h2>
                                 <div className="flex flex-wrap gap-2">
-                                    {project.techStack.map((item: string, index: number) => (
-                                        <Badge key={index}>{item}</Badge>
-                                    ))}
+                                    {project.techStack.map(
+                                        (item: string, index: number) => (
+                                            <Badge key={index}>{item}</Badge>
+                                        ),
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -104,7 +106,11 @@ export default async function ViewProjectPage({
                                     View Live Preview
                                 </a>
                             </Button>
-                        ) : <p className='text-muted-foreground'>Live Preview is coming soon</p>}
+                        ) : (
+                            <p className="text-muted-foreground">
+                                Live Preview is coming soon
+                            </p>
+                        )}
                     </div>
                 </div>
             </section>

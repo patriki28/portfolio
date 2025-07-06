@@ -14,7 +14,7 @@ export default function ProjectCard({ data }: ProjectCardProps) {
 
     const imageUrl = image?.asset
         ? urlForImage(image).url()
-        : "/placeholder.webp";
+        : '/placeholder.webp';
 
     return (
         <Card className="h-full">
