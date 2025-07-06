@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { getLucideIcon } from '@/utils/getLucideIcon';
 
 const SOCIALS_QUERY =
-    defineQuery(`*[_type == "social"] | order(_createdAt desc)[0...12] {
+    defineQuery(`*[_type == "social"] {
   _id,
   icon,
   label,
@@ -47,7 +47,9 @@ export default async function ContactSection() {
                             );
                         })}
                     </div>
-                ) : null}
+                ) : <p className="text-muted-foreground">
+                    I&apos;m currently updating my social links — feel free to check back later or use the contact form if available!
+                </p>}
             </div>
         </section>
     );

@@ -12,7 +12,13 @@ import {
 } from './ui/timeline';
 import { sortExperiencesByDate } from '@/utils/sortExperiencesByDate';
 
-const EXPERIENCE_QUERY = defineQuery(`*[_type == "experience"]`);
+const EXPERIENCE_QUERY = defineQuery(`*[_type == "experience"] {
+  _id,
+  date,
+  title,
+  description
+}`);
+
 
 export default async function ExperienceSection() {
     const { data } = await sanityFetch({ query: EXPERIENCE_QUERY });
@@ -49,7 +55,10 @@ export default async function ExperienceSection() {
                             ))}
                         </Timeline>
                     </div>
-                ) : null}
+                ) : <p className="text-muted-foreground text-center">
+                    No experiences to display at the moment. Please check back later!
+                </p>
+                }
             </div>
         </section>
     );

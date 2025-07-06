@@ -55,7 +55,10 @@ export default async function ProjectSection() {
                             <CarouselNext className="static" />
                         </div>
                     </Carousel>
-                ) : null}
+                ) : <p className="text-muted-foreground text-center">
+                    No projects to showcase at the moment. Please check back soon!
+                </p>
+                }
             </div>
         </section>
     );
