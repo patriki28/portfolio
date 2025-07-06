@@ -58,7 +58,7 @@ cd patrick-diesta-portfolio
 npm install
 
 # Install Sanity Studio dependencies
-cd ../sanity-studio
+cd ../studio-portfolio
 npm install
 ```
 
@@ -97,7 +97,7 @@ The project includes the following content types that need to be created in your
 # Start the portfolio (from patrick-diesta-portfolio directory)
 npm run dev
 
-# Start Sanity Studio (from sanity-studio directory)
+# Start Sanity Studio (from studio-portfolio directory)
 npm run dev
 ```
 
